@@ -12,6 +12,14 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.javaee>8.0</version.javaee>
+        <version.hibernate-commons-annotations>5.1.0.Final</version.hibernate-commons-annotations>
+        <version.hibernate-core>5.4.0.Final</version.hibernate-core>
+        <version.hibernate-c3p0>5.4.0.Final</version.hibernate-c3p0>
+        <version.hibernate-jpa-2.1-api>1.0.2.Final</version.hibernate-jpa-2.1-api>
+        <version.hibernate-ehcache>5.4.0.Final</version.hibernate-ehcache>
+        <version.hibernate-entitymanager>4.3.1.Final</version.hibernate-entitymanager>
+        <version.mysql-connector-java>8.0.13</version.mysql-connector-java>
     </properties>
     
     <dependencies>
@@ -20,7 +28,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>8.0</version>
+            <version>${version.javaee}</version>
             <scope>provided</scope>
         </dependency>
         
@@ -28,37 +36,37 @@
         <dependency>
             <groupId>org.hibernate.common</groupId>
             <artifactId>hibernate-commons-annotations</artifactId>
-            <version>5.1.0.Final</version>
+            <version>${version.hibernate-commons-annotations}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.4.0.Final</version>
+            <version>${version.hibernate-core}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-c3p0</artifactId>
-            <version>5.4.0.Final</version>
+            <version>${version.hibernate-c3p0}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.2.Final</version>
+            <version>${version.hibernate-jpa-2.1-api}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-ehcache</artifactId>
-            <version>5.4.0.Final</version>
+            <version>${version.hibernate-ehcache}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.1.Final</version>
+            <version>${version.hibernate-entitymanager}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.13</version>
+            <version>${version.mysql-connector-java}</version>
         </dependency>
         
         <!-- APACHE HELPER DEPENDENCIES -->
@@ -125,7 +133,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>6.2</version>
+            <version>7.0</version>
         </dependency>
         <dependency>
             <groupId>org.primefaces.themes</groupId>
