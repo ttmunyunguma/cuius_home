@@ -22,6 +22,15 @@
         <version.mysql-connector-java>8.0.13</version.mysql-connector-java>
     </properties>
     
+    <repositories>
+        <repository>
+            <id>oracleReleases</id>
+            <name>Oracle Released Java Packages</name>
+            <url>http://download.oracle.com/maven</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    
     <dependencies>
         
         <!-- JAVA EE DEPENDENCIES -->
@@ -187,7 +196,7 @@
                                 <artifactItem>
                                     <groupId>javax</groupId>
                                     <artifactId>javaee-endorsed-api</artifactId>
-                                    <version>8.0</version>
+                                    <version>7.0</version>
                                     <type>jar</type>
                                 </artifactItem>
                             </artifactItems>
