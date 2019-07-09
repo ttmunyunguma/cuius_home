@@ -10,7 +10,11 @@
     </context-param>
     <context-param>
         <param-name>primefaces.THEME</param-name>
+<<<<<<< HEAD
+        <param-value>afterdark</param-value>
+=======
         <param-value>cupertino</param-value>
+>>>>>>> c8e4a19a62031abc02c7075e762c10c3b3415587
     </context-param>
     <session-config>
         <session-timeout>

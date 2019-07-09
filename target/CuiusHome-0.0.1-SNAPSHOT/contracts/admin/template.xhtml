@@ -2,7 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+<<<<<<< HEAD
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+=======
       xmlns:h="http://xmlns.jcp.org/jsf/html">
+>>>>>>> c8e4a19a62031abc02c7075e762c10c3b3415587
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -60,7 +65,11 @@
                             <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12">
 
                                 <!-- Logo -->
+<<<<<<< HEAD
+                                <a href="#" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
+=======
                                 <a href="index.xhtml" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
+>>>>>>> c8e4a19a62031abc02c7075e762c10c3b3415587
                                 
                                 </a>
                                 <!-- End Logo -->
@@ -85,6 +94,9 @@
 
                             <!-- Messages/Notifications/Top Search Bar/Top User -->
                             <div class="col-auto d-flex g-py-12 g-pl-40--lg ml-auto">
+<<<<<<< HEAD
+                                
+=======
                                 <!-- Top Messages -->
                                 <div class="g-pos-rel g-hidden-sm-down g-mr-5">
                                     <a id="messagesInvoker" class="d-block text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#" aria-controls="messagesMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#messagesMenu"
@@ -276,6 +288,7 @@
                                 </div>
                                 <!-- End Top Notifications -->
 
+>>>>>>> c8e4a19a62031abc02c7075e762c10c3b3415587
                                 <!-- Top Search Bar (Mobi) -->
                                 <a id="searchInvoker" class="g-hidden-sm-up text-uppercase u-header-icon-v1 g-pos-rel g-width-40 g-height-40 rounded-circle g-font-size-20" href="#" aria-controls="searchMenu" aria-haspopup="true" aria-expanded="false" data-is-mobile-only="true" data-dropdown-event="click"
                                    data-dropdown-target="#searchMenu" data-dropdown-type="css-animation" data-dropdown-duration="300" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
@@ -285,6 +298,81 @@
 
                                 <!-- Top User -->
                                 <div class="col-auto d-flex g-pt-5 g-pt-0--sm g-pl-10 g-pl-20--sm">
+<<<<<<< HEAD
+                                    <h:form id="top_user_form">
+                                        <div class="g-pos-rel g-px-10--lg">
+                                            <a id="profileMenuInvoker" class="d-block" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#profileMenu" data-dropdown-type="css-animation" data-dropdown-duration="300" 
+                                               data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
+                                                <span class="g-pos-rel">
+                                                    <span class="u-badge-v2--xs u-badge--top-right g-hidden-sm-up g-bg-secondary g-mr-5"></span>
+                                                    <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm" src="assets/img-temp/130x130/img1.jpg" alt="" />
+                                                </span>
+                                                <span class="g-pos-rel g-top-2">
+                                                    <span class="g-hidden-sm-down"><p:outputLabel value="#{account.propertyManager.fullName}" rendered="#{account.loggedIn}"/></span>
+                                                    <i class="hs-admin-angle-down g-pos-rel g-top-2 g-ml-10"></i>
+                                                </span>
+                                            </a>
+
+                                            <!-- Top User Menu -->
+                                            <ul id="profileMenu" class="g-pos-abs g-left-0 g-width-100x--lg g-nowrap g-font-size-14 g-py-20 g-mt-17 rounded" aria-labelledby="profileMenuInvoker">
+                                                <li class="g-hidden-sm-up g-mb-10">
+                                                    <a class="media g-py-5 g-px-20" href="#">
+                                                        <span class="d-flex align-self-center g-pos-rel g-mr-12">
+                                                            <span class="u-badge-v1 g-top-minus-3 g-right-minus-3 g-width-18 g-height-18 g-bg-secondary g-font-size-10 g-color-white rounded-circle p-0">10</span>
+                                                            <i class="hs-admin-comment-alt"></i>
+                                                        </span>
+                                                        <span class="media-body align-self-center">Unread Messages</span>
+                                                    </a>
+                                                </li>
+                                                <li class="g-hidden-sm-up g-mb-10">
+                                                    <a class="media g-py-5 g-px-20" href="#">
+                                                        <span class="d-flex align-self-center g-mr-12">
+                                                            <i class="hs-admin-bell"></i>
+                                                        </span>
+                                                        <span class="media-body align-self-center">Notifications</span>
+                                                    </a>
+                                                </li>
+                                                <li class="g-mb-10">
+                                                    <a class="media g-color-primary--hover g-py-5 g-px-20" href="#">
+                                                        <span class="d-flex align-self-center g-mr-12">
+                                                            <i class="hs-admin-user"></i>
+                                                        </span>
+                                                        <span class="media-body align-self-center">My Profile</span>
+                                                    </a>
+                                                </li>
+                                                <li class="g-mb-10">
+                                                    <a class="media g-color-primary--hover g-py-5 g-px-20" href="#">
+                                                        <span class="d-flex align-self-center g-mr-12">
+                                                            <i class="hs-admin-rocket"></i>
+                                                        </span>
+                                                        <span class="media-body align-self-center">Upgrade Plan</span>
+                                                    </a>
+                                                </li>
+                                                <li class="g-mb-10">
+                                                    <a class="media g-color-primary--hover g-py-5 g-px-20" href="#">
+                                                        <span class="d-flex align-self-center g-mr-12">
+                                                            <i class="hs-admin-layout-grid-2"></i>
+                                                        </span>
+                                                        <span class="media-body align-self-center">Latest Projects</span>
+                                                    </a>
+                                                </li>
+                                                <li class="g-mb-10">
+                                                    <a class="media g-color-primary--hover g-py-5 g-px-20" href="#">
+                                                        <span class="d-flex align-self-center g-mr-12"><i class="hs-admin-headphone-alt"></i></span>
+                                                        <span class="media-body align-self-center">Get Support</span>
+                                                    </a>
+                                                </li>
+                                                <li class="mb-0">
+                                                    <p:commandLink class="media g-color-primary--hover g-py-5 g-px-20" action="#{account.signOut()}" ajax="false">
+                                                        <span class="d-flex align-self-center g-mr-12"><i class="hs-admin-shift-right"></i></span>
+                                                        <span class="media-body align-self-center"><p:outputLabel value="Sign Out"/></span>
+                                                    </p:commandLink>
+                                                </li>
+                                            </ul>
+                                            <!-- End Top User Menu -->
+                                        </div>
+                                    </h:form>
+=======
                                     <div class="g-pos-rel g-px-10--lg">
                                         <a id="profileMenuInvoker" class="d-block" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#profileMenu" data-dropdown-type="css-animation" data-dropdown-duration="300"
                                            data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
@@ -360,6 +448,7 @@
                                         </ul>
                                         <!-- End Top User Menu -->
                                     </div>
+>>>>>>> c8e4a19a62031abc02c7075e762c10c3b3415587
                                 </div>
                                 <!-- End Top User -->
                             </div>
