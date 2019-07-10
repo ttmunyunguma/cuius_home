@@ -12,50 +12,73 @@
         <ui:composition template="/template.xhtml">
             <ui:define name="title">Cuius Property Manager Portal | Add Property</ui:define>
 
-            <ui:define name="content" rendered="#{account.loggedIn}">
-                <f:view id="authorized">
+            <ui:define name="content">
+                <ui:fragment id="authorized" rendered="#{account.loggedIn}">
                     <div class="g-pa-20">
                         <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-28">
-                            <h:outputText value="List a property for Rent or Sale" rendered="#{account.loggedIn}"/>
+                            <h:outputLabel value="List a property for Rent or Sale"/>
                         </h1>
                         <div class="row">
                             <!-- 1-st column -->
                             <div class="col-md-6">
                                 <!-- Core Data -->
                                 <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Core Data" rendered="#{account.loggedIn}"/></h3>
+                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Core Data"/></h3>
                                     <div class="form-group g-mb-30">
-                                        <h:outputLabel class="g-mb-10" for="name" value="Cover Name" rendered="#{account.loggedIn}"/>
-                                        <p:inputTextarea id="name" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-resize-none g-overflow-hidden" rows="3" a:placeholder="Name to be first seen by users" rendered="#{account.loggedIn}"
+                                        <h:outputLabel class="g-mb-10" for="name" value="Cover Name"/>
+                                        <p:inputTextarea id="name" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-resize-none g-overflow-hidden" rows="3" a:placeholder="Name to be first seen by users"
                                                          counter="name_chars" maxlength="500" counterTemplate="{0} characters remaining." autoResize="false"/>
                                         <small class="form-text text-muted g-font-size-default g-mt-10">
                                             <h:outputText id="name_chars" />
                                         </small>
                                         <small class="form-text text-muted g-font-size-default g-mt-10">
-                                            <strong><h:outputText value="Note:" rendered="#{account.loggedIn}"/></strong><h:outputText value="This will create the first property impression" rendered="#{account.loggedIn}"/>
+                                            <strong><h:outputText value="Note:"/></strong><h:outputText value="This will create the first property impression"/>
                                         </small>
                                     </div>
                                     <div class="form-group g-mb-30">
-                                        <h:outputLabel class="g-mb-10" for="description" value="Detailed Description" rendered="#{account.loggedIn}"/>
-                                        <p:inputTextarea id="description" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20" rows="3" a:placeholder="Everything you want to tell your buyers about the property" rendered="#{account.loggedIn}"
+                                        <h:outputLabel class="g-mb-10" for="description" value="Detailed Description"/>
+                                        <p:inputTextarea id="description" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20" rows="3" a:placeholder="Everything you want to tell your buyers about the property"
                                                          counter="des_chars" maxlength="5000" counterTemplate="{0} characters remaining." autoResize="false"/>
                                         <small class="form-text text-muted g-font-size-default g-mt-10">
                                             <h:outputText id="des_chars" />
                                         </small>
+                                    </div>
+                                    <div class="g-mb-30">
+                                        <h:outputLabel class="g-mb-10" value="Property Category" />
+                                        <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                            <select class="js-select u-select--v3-select u-sibling w-100" required="required" title="Select a category" style="display: none;">
+                                                <option value="selectListItem1" >
+                                                        <span class="d-flex align-items-center w-100">Residential</span>
+                                                </option>
+                                                <option value="selectListItem2" >
+                                                    <span class="d-flex align-items-center w-100">Industrial</span>
+                                                </option>
+                                                <option value="selectListItem3" >
+                                                    <span class="d-flex align-items-center w-100">Office</span>
+                                                </option>
+                                                <option value="selectListItem4" >
+                                                    <span class="d-flex align-items-center w-100">Retail</span>
+                                                </option>
+                                            </select>
+
+                                            <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                <i class="hs-admin-angle-down"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Rounded Textareas -->
 
                                 <!-- Additional Data -->
                                 <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Additional Property Data" rendered="#{account.loggedIn}"/></h3>
+                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Additional Property Data"/></h3>
 
                                 </div>
                                 <!-- End Additional Data -->
                                 
                                 <!-- Marketing Data -->
                                 <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Marketing Data" rendered="#{account.loggedIn}"/></h3>
+                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Marketing Data"/></h3>
 
                                 </div>
                                 <!-- End Marketing Data -->
@@ -66,21 +89,21 @@
                             <div class="col-md-6">
                                 <!-- Location Data -->
                                 <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Property Location Data" rendered="#{account.loggedIn}"/></h3>
+                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Property Location Data"/></h3>
 
                                 </div>
                                 <!-- End Location Data -->
                                 
                                 <!-- Economic Data -->
                                 <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Economics" rendered="#{account.loggedIn}"/></h3>
+                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Economics"/></h3>
 
                                 </div>
                                 <!-- End Economic Data -->
                                 
                                 <!-- History Data -->
                                 <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Property History" rendered="#{account.loggedIn}"/></h3>
+                                    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Property History"/></h3>
 
                                 </div>
                                 <!-- End History Data -->
@@ -88,11 +111,11 @@
                             <!-- End 2-nd column -->
                         </div>
                     </div>
-                </f:view>
+                </ui:fragment>
 
-                <f:view id="unauthorized">
-                    <h1><h:outputLink value="authenticate.xhtml" rendered="#{!account.loggedIn}">Please Log In first</h:outputLink></h1>
-                </f:view>
+                <ui:fragment id="unauthorized" rendered="#{!account.loggedIn}">
+                    <h1><h:outputLink value="authenticate.xhtml"><h:outputLabel value="Please Log In first"/></h:outputLink></h1>
+                </ui:fragment>
             </ui:define>
 
         </ui:composition>
