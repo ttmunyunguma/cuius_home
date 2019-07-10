@@ -44,6 +44,9 @@
         <property name="instagramLink" type="string">
             <column name="instagram_link" length="500" />
         </property>
+        <property name="password" type="string">
+            <column name="password" length="1500" />
+        </property>
         <set name="propertyHistories" table="property_history" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="agent_id" not-null="true" />

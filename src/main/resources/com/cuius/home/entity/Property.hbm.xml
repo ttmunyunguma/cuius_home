@@ -65,6 +65,9 @@
         <property name="priceSale" type="string">
             <column name="price_sale" length="50" not-null="true" />
         </property>
+        <property name="videoUrl" type="string">
+            <column name="video_url" length="250" not-null="true" />
+        </property>
         <set name="propertyHistories" table="property_history" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="property_id" not-null="true" />

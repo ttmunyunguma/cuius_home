@@ -61,9 +61,9 @@
                             <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12">
 
                                 <!-- Logo -->
-                                <a href="#" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
-                                
-                                </a>
+                                <p:link outcome="index.xhtml" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
+                                    <p:outputLabel value="Cuius Portal" />
+                                </p:link>
                                 <!-- End Logo -->
 
                                 <!-- Sidebar Toggler -->
@@ -96,7 +96,7 @@
 
                                 <!-- Top User -->
                                 <div class="col-auto d-flex g-pt-5 g-pt-0--sm g-pl-10 g-pl-20--sm">
-                                    <h:form id="top_user_form">
+                                    <h:form id="top_user_form" rendered="#{account.loggedIn}">
                                         <div class="g-pos-rel g-px-10--lg">
                                             <a id="profileMenuInvoker" class="d-block" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#profileMenu" data-dropdown-type="css-animation" data-dropdown-duration="300" 
                                                data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
@@ -105,7 +105,7 @@
                                                     <img class="g-width-30 g-width-40--md g-height-30 g-height-40--md rounded-circle g-mr-10--sm" src="assets/img-temp/130x130/img1.jpg" alt="" />
                                                 </span>
                                                 <span class="g-pos-rel g-top-2">
-                                                    <span class="g-hidden-sm-down"><p:outputLabel value="#{account.propertyManager.fullName}" rendered="#{account.loggedIn}"/></span>
+                                                    <span class="g-hidden-sm-down"><p:outputLabel value="#{account.propertyManager.fullName}" /></span>
                                                     <i class="hs-admin-angle-down g-pos-rel g-top-2 g-ml-10"></i>
                                                 </span>
                                             </a>
@@ -208,7 +208,7 @@
                         <!-- Sidebar Nav -->
                         <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--dark">
                             <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
-                                <!-- Dashboards -->
+                                <!-- Database -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-opened has-active">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu1">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -221,7 +221,7 @@
                                         <span class="u-side-nav--has-sub-menu__indicator"></span>
                                     </a>
 
-                                    <!-- Dashboards: Submenu-1 -->
+                                    <!-- Database Submenu-1 -->
                                     <ul id="subMenu1" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: block;">
                                         <!-- Dashboards v1 -->
                                         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
@@ -256,11 +256,11 @@
                                         </li>
                                         <!-- End Dashboards v3 -->
                                     </ul>
-                                    <!-- End Dashboards: Submenu-1 -->
+                                    <!-- End Database Submenu-1 -->
                                 </li>
-                                <!-- End Dashboards -->
+                                <!-- End Database -->
 
-                                <!-- Layouts Settings -->
+                                <!-- Platform Settings -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu2">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -300,9 +300,9 @@
                                     </ul>
                                     <!-- End Layouts Settings: Submenu-1 -->
                                 </li>
-                                <!-- End Layouts Settings -->
+                                <!-- End Platform Settings -->
 
-                                <!-- App Views -->
+                                <!-- Rentals -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu4">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -393,9 +393,9 @@
                                     </ul>
                                     <!-- End App Views: Submenu-1 -->
                                 </li>
-                                <!-- End App Views -->
+                                <!-- End Rentals -->
 
-                                <!-- Forms -->
+                                <!-- Properties -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu7">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -409,7 +409,7 @@
                                         <span class="u-side-nav--has-sub-menu__indicator"></span>
                                     </a>
 
-                                    <!-- Forms: Submenu-1 -->
+                                    <!-- Properties Submenu-1 -->
                                     <ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
                                         <!-- Elements -->
                                         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
@@ -423,26 +423,13 @@
                                                 </span>
                                             </a>
 
-                                            <!-- Menu Leveles: Submenu-2 -->
+                                            <!-- Menu Add Submenu-2 -->
                                             <ul id="subMenu7Elements" class="u-side-nav--third-level-menu">
-                                                <!-- Text Inputs -->
+                                                <!-- Add Property -->
                                                 <li class="u-side-nav--third-level-menu-item">
-                                                    <a class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" href="#">Residential</a>
+                                                    <p:link class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" outcome="add_property.xhtml">All</p:link>
                                                 </li>
-                                                <!-- End Text Inputs -->
-
-                                                <!-- Textareas -->
-                                                <li class="u-side-nav--third-level-menu-item">
-                                                    <a class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" href="#">Industrial</a>
-                                                </li>
-                                                <!-- End Textareas -->
-
-                                                <!-- Text Editors -->
-                                                <li class="u-side-nav--third-level-menu-item">
-                                                    <a class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" href="#">Office</a>
-                                                </li>
-                                                <!-- End Text Editors -->
-
+                                                <!-- Add Property -->
                                             </ul>
                                             <!-- End Menu Leveles: Submenu-2 -->
                                         </li>
@@ -474,7 +461,7 @@
                                     </ul>
                                     <!-- End Forms: Submenu-1 -->
                                 </li>
-                                <!-- End Forms -->
+                                <!-- End Properties -->
 
                                 <!-- Tables -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">

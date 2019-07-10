@@ -48,13 +48,14 @@ public class Property  implements java.io.Serializable {
      private String longitude;
      private String priceRent;
      private String priceSale;
+     private String videoUrl;
      private Set propertyHistories = new HashSet(0);
 
     public Property() {
     }
 
 	
-    public Property(PropertyCategory propertyCategory, PropertyImage propertyImage, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String priceRent, String priceSale) {
+    public Property(PropertyCategory propertyCategory, PropertyImage propertyImage, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String priceRent, String priceSale, String videoUrl) {
         this.propertyCategory = propertyCategory;
         this.propertyImage = propertyImage;
         this.propertyManager = propertyManager;
@@ -68,8 +69,9 @@ public class Property  implements java.io.Serializable {
         this.status = status;
         this.priceRent = priceRent;
         this.priceSale = priceSale;
+        this.videoUrl = videoUrl;
     }
-    public Property(PropertyCategory propertyCategory, PropertyImage propertyImage, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, Date yearBuilt, Integer totalRooms, Integer totalBeds, Integer totalBaths, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String latitude, String longitude, String priceRent, String priceSale, Set propertyHistories) {
+    public Property(PropertyCategory propertyCategory, PropertyImage propertyImage, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, Date yearBuilt, Integer totalRooms, Integer totalBeds, Integer totalBaths, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String latitude, String longitude, String priceRent, String priceSale, String videoUrl, Set propertyHistories) {
        this.propertyCategory = propertyCategory;
        this.propertyImage = propertyImage;
        this.propertyManager = propertyManager;
@@ -89,6 +91,7 @@ public class Property  implements java.io.Serializable {
        this.longitude = longitude;
        this.priceRent = priceRent;
        this.priceSale = priceSale;
+       this.videoUrl = videoUrl;
        this.propertyHistories = propertyHistories;
     }
    
@@ -292,6 +295,15 @@ public class Property  implements java.io.Serializable {
     
     public void setPriceSale(String priceSale) {
         this.priceSale = priceSale;
+    }
+
+    @Column(name="video_url", nullable=false, length=250)
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="property")
