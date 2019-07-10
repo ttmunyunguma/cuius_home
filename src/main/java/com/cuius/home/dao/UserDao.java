@@ -19,8 +19,6 @@ package com.cuius.home.dao;
 
 import com.cuius.home.entity.PropertyManager;
 import com.cuius.home.util.HibernateUtil;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -30,8 +28,6 @@ import org.hibernate.query.Query;
  *
  * @author terrence
  */
-@Named(value = "userDao")
-@RequestScoped
 public class UserDao {
     
     // ======================================

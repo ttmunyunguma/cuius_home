@@ -1,18 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
         <ui:composition template="/template.xhtml">
-            <ui:define name="title">Cuius Property Manager Portal</ui:define>
+            <ui:define name="title">Cuius Property Manager Portal | Add Property</ui:define>
 
-            <ui:define name="content">
-                
-                
-                
-            </ui:define>
+            <f:view id="authorized">
+                <h1><h:outputText value="TODO add content" rendered="#{account.loggedIn}"/></h1>
+            </f:view>
+
+            <f:view id="unauthorized">
+                <h1><h:outputLink value="authenticate.xhtml" rendered="#{!account.loggedIn}">Please Log In first</h:outputLink></h1>
+            </f:view>
+
 
         </ui:composition>
 

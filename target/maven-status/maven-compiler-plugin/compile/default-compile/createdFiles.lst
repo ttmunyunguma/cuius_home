@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 com/cuius/home/dao/UserDao.class
 com/cuius/home/util/PasswordUtils.class
 com/cuius/home/entity/PropertyHistory.class
 com/cuius/home/entity/PropertyManager.class
 com/cuius/home/entity/PropertyImage.class
 com/cuius/home/manage/Account.class
-=======
-com/cuius/home/entity/PropertyHistory.class
-com/cuius/home/entity/PropertyManager.class
-com/cuius/home/entity/PropertyImage.class
->>>>>>> c8e4a19a62031abc02c7075e762c10c3b3415587
 com/cuius/home/entity/PropertyCategory.class
 com/cuius/home/entity/Property.class
 com/cuius/home/util/HibernateUtil.class

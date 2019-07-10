@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /home/terrence/NetBeansProjects/cuius_home/src/main/java/com/cuius/home/util/PasswordUtils.java
 /home/terrence/NetBeansProjects/cuius_home/src/main/java/com/cuius/home/manage/Account.java
 /home/terrence/NetBeansProjects/cuius_home/src/main/java/com/cuius/home/dao/UserDao.java
@@ -8,11 +7,3 @@
 /home/terrence/NetBeansProjects/cuius_home/src/main/java/com/cuius/home/entity/Property.java
 /home/terrence/NetBeansProjects/cuius_home/src/main/java/com/cuius/home/entity/PropertyManager.java
 /home/terrence/NetBeansProjects/cuius_home/src/main/java/com/cuius/home/entity/PropertyImage.java
-=======
-/home/terrence/NetBeansProjects/CuiusHome/src/main/java/com/cuius/home/entity/PropertyHistory.java
-/home/terrence/NetBeansProjects/CuiusHome/src/main/java/com/cuius/home/entity/Property.java
-/home/terrence/NetBeansProjects/CuiusHome/src/main/java/com/cuius/home/entity/PropertyManager.java
-/home/terrence/NetBeansProjects/CuiusHome/src/main/java/com/cuius/home/util/HibernateUtil.java
-/home/terrence/NetBeansProjects/CuiusHome/src/main/java/com/cuius/home/entity/PropertyImage.java
-/home/terrence/NetBeansProjects/CuiusHome/src/main/java/com/cuius/home/entity/PropertyCategory.java
->>>>>>> c8e4a19a62031abc02c7075e762c10c3b3415587
