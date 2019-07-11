@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
@@ -7,132 +8,439 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <body>
+<body>
 
-        <ui:composition template="/template.xhtml">
-            <ui:define name="title">Cuius Property Manager Portal | Add Property</ui:define>
+<ui:composition template="/template.xhtml">
+    <ui:define name="title">Cuius Property Manager Portal | Add Property</ui:define>
 
-            <ui:define name="content">
-                <ui:fragment id="authorized" rendered="#{account.loggedIn}">
-                    <div class="g-pa-20">
-                        <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-28">
-                            <h:outputLabel value="List a property for Rent or Sale"/>
-                        </h1>
-                        <h:form id="add_property_form">
-                            <p:growl id="growl" sticky="true" showDetail="true"/>
-                            <p:wizard flowListener="#{userWizard.onFlowProcess}">
-                                <p:tab id="basic" title="Basics and Location">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <!-- Core Data -->
-                                            <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                                <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Core Data"/></h3>
-                                                <div class="form-group g-mb-30">
-                                                    <h:outputLabel class="g-mb-10" for="name" value="Cover Name"/>
-                                                    <p:inputTextarea id="name" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-resize-none g-overflow-hidden" rows="3" a:placeholder="Name to be first seen by users"
-                                                                     counter="name_chars" maxlength="500" counterTemplate="{0} characters remaining." />
-                                                    <small class="form-text text-muted g-font-size-default g-mt-10">
-                                                        <h:outputText id="name_chars" />
-                                                    </small>
-                                                    <small class="form-text text-muted g-font-size-default g-mt-10">
-                                                        <strong><h:outputText value="Note:"/></strong><h:outputText value="This will create the first property impression"/>
-                                                    </small>
-                                                </div>
-                                                <div class="form-group g-mb-30">
-                                                    <h:outputLabel class="g-mb-10" for="description" value="Detailed Description"/>
-                                                    <p:inputTextarea id="description" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20" rows="3" a:placeholder="Everything you want to tell your buyers about the property"
-                                                                     counter="des_chars" maxlength="5000" counterTemplate="{0} characters remaining." autoResize="false"/>
-                                                    <small class="form-text text-muted g-font-size-default g-mt-10">
-                                                        <h:outputText id="des_chars" />
-                                                    </small>
-                                                </div>
-                                                <div class="g-mb-30">
-                                                    <h:outputLabel class="g-mb-10" value="Property Category" />
-                                                    <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
-                                                        <select class="js-select u-select--v3-select u-sibling w-100" required="required" title="Select a category" style="display: none;">
-                                                            <option value="selectListItem1" >
-                                                                <span class="d-flex align-items-center w-100">Residential</span>
-                                                            </option>
-                                                            <option value="selectListItem2" >
-                                                                <span class="d-flex align-items-center w-100">Industrial</span>
-                                                            </option>
-                                                            <option value="selectListItem3" >
-                                                                <span class="d-flex align-items-center w-100">Office</span>
-                                                            </option>
-                                                            <option value="selectListItem4" >
-                                                                <span class="d-flex align-items-center w-100">Retail</span>
-                                                            </option>
-                                                        </select>
-
-                                                        <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-                                                            <i class="hs-admin-angle-down"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Rounded Textareas -->
+    <ui:define name="content">
+        <ui:fragment id="authorized" rendered="#{account.loggedIn}">
+            <div class="g-pa-20">
+                <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-28">
+                    <h:outputLabel value="List a property for Rent or Sale"/>
+                </h1>
+                <h:form id="add_property_form">
+                    <p:growl id="growl" sticky="true" showDetail="true"/>
+                    <p:wizard flowListener="#{userWizard.onFlowProcess}">
+                        <p:tab id="basic" title="Basics and Location">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Core Data -->
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">
+                                            <h:outputLabel value="Core Data"/></h3>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="name" value="Cover Name"/>
+                                            <p:inputTextarea id="name"
+                                                             class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-resize-none g-overflow-hidden"
+                                                             rows="3" a:placeholder="Name to be first seen by users"
+                                                             counter="name_chars" maxlength="500"
+                                                             counterTemplate="{0} characters remaining."/>
+                                            <small class="form-text text-muted g-font-size-default g-mt-10">
+                                                <h:outputText id="name_chars"/>
+                                            </small>
+                                            <small class="form-text text-muted g-font-size-default g-mt-10">
+                                                <strong><h:outputText value="Note:"/></strong><h:outputText
+                                                    value="This will create the first property impression"/>
+                                            </small>
                                         </div>
-                                        <div class="col-md-6">
-                                            <!-- Location Data -->
-                                            <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                                <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Property Location Data"/></h3>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="description"
+                                                           value="Detailed Description"/>
+                                            <p:inputTextarea id="description"
+                                                             class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20"
+                                                             rows="3"
+                                                             a:placeholder="Everything you want to tell your buyers about the property"
+                                                             counter="des_chars" maxlength="5000"
+                                                             counterTemplate="{0} characters remaining."
+                                                             autoResize="false"/>
+                                            <small class="form-text text-muted g-font-size-default g-mt-10">
+                                                <h:outputText id="des_chars"/>
+                                            </small>
+                                        </div>
+                                        <div class="g-mb-30">
+                                            <h:outputLabel class="g-mb-10" value="Property Category"/>
+                                            <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                <select class="js-select u-select--v3-select u-sibling w-100"
+                                                        required="required" title="Select a category"
+                                                        style="display: none;">
+                                                    <option value="selectListItem1">
+                                                        <span class="d-flex align-items-center w-100">Residential</span>
+                                                    </option>
+                                                    <option value="selectListItem2">
+                                                        <span class="d-flex align-items-center w-100">Industrial</span>
+                                                    </option>
+                                                    <option value="selectListItem3">
+                                                        <span class="d-flex align-items-center w-100">Office</span>
+                                                    </option>
+                                                    <option value="selectListItem4">
+                                                        <span class="d-flex align-items-center w-100">Retail</span>
+                                                    </option>
+                                                </select>
 
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                </div>
                                             </div>
-                                            <!-- End Location Data -->
                                         </div>
                                     </div>
-                                </p:tab>
-                                <p:tab id="history" title="Additional and History">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <!-- Additional Data -->
-                                            <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                                <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Additional Property Data"/></h3>
-
+                                    <!-- End Core Data -->
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Location Data -->
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">
+                                            <h:outputLabel value="Property Location Data"/>
+                                        </h3>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="address" value="Address" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="address" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="Address" counter="address_chars" maxlength="200"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="address_chars"/>
+                                                </small>
                                             </div>
-                                            <!-- End Additional Data -->
                                         </div>
-                                        <div class="col-md-6">
-                                            <!-- History Data -->
-                                            <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                                <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Property History"/></h3>
-
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="town" value="Town" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="town" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="Address" counter="town_chars" maxlength="50"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="town_chars"/>
+                                                </small>
                                             </div>
-                                            <!-- End History Data -->
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="region" value="Region" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="region" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="Address" counter="region_chars" maxlength="50"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="region_chars"/>
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="latitude" value="Latitude" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="latitude" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="Address" counter="latitude_chars" maxlength="20"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="latitude_chars"/>
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="longitude" value="Longitude" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="longitude" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="Address" counter="longitude_chars" maxlength="20"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="longitude_chars"/>
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
-                                </p:tab>
-                                <p:tab id="economics" title="Economics and Marketing">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <!-- Economic Data -->
-                                            <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                                <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Economics"/></h3>
-
+                                    <!-- End Location Data -->
+                                </div>
+                            </div>
+                        </p:tab>
+                        <p:tab id="history" title="Additional and History">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Additional Data -->
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">
+                                            <h:outputLabel value="Additional Property Data"/>
+                                        </h3>
+                                        <div class="g-mb-30">
+                                            <h:outputLabel class="g-mb-10" value="Total Rooms"/>
+                                            <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                <select class="js-select u-select--v3-select u-sibling w-100"
+                                                        required="required" title="Select a category"
+                                                        style="display: none;">
+                                                    <option value="selectListItem1">
+                                                        <span class="d-flex align-items-center w-100">1</span>
+                                                    </option>
+                                                </select>
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                </div>
                                             </div>
-                                            <!-- End Economic Data -->
                                         </div>
-                                        <div class="col-md-6">
-                                            <!-- Marketing Data -->
-                                            <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-                                                <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20"><h:outputLabel value="Marketing Data"/></h3>
-
+                                        <div class="g-mb-30">
+                                            <h:outputLabel class="g-mb-10" value="Total Beds"/>
+                                            <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                <select class="js-select u-select--v3-select u-sibling w-100"
+                                                        required="required" title="Select a category"
+                                                        style="display: none;">
+                                                    <option value="selectListItem1">
+                                                        <span class="d-flex align-items-center w-100">1</span>
+                                                    </option>
+                                                </select>
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                </div>
                                             </div>
-                                            <!-- End Marketing Data -->
+                                        </div>
+                                        <div class="g-mb-30">
+                                            <h:outputLabel class="g-mb-10" value="Total Baths"/>
+                                            <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                <select class="js-select u-select--v3-select u-sibling w-100"
+                                                        required="required" title="Select a category"
+                                                        style="display: none;">
+                                                    <option value="selectListItem1">
+                                                        <span class="d-flex align-items-center w-100">1</span>
+                                                    </option>
+                                                </select>
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="land_area" value="Total Land Area (sq_mtrs)" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="land_area" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="00.00"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="building_area" value="Total Building Area (sq_mtrs)" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="building_area" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="00.00" />
+                                            </div>
                                         </div>
                                     </div>
-                                </p:tab>
-                            </p:wizard>
-                        </h:form>
-                    </div>
-                </ui:fragment>
+                                    <!-- End Additional Data -->
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- History Data -->
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">
+                                            <h:outputLabel value="Property History"/>
+                                        </h3>
+                                        <div class="g-mb-30">
+                                            <h:outputLabel class="g-mb-10" value="Year Built"/>
+                                            <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                <select class="js-select u-select--v3-select u-sibling w-100"
+                                                        required="required" title="Select a category"
+                                                        style="display: none;">
+                                                    <option value="selectListItem1">
+                                                        <span class="d-flex align-items-center w-100">1987</span>
+                                                    </option>
+                                                </select>
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="history_details" value="Last Sale Detail" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="history_details" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="Details" counter="history_chars" maxlength="500"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="history_chars"/>
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="price" value="Price" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="price" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="00.00" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="source" value="SOurce (link)" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="source" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="url" counter="source_chars" maxlength="200"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="source_chars"/>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End History Data -->
+                                </div>
+                            </div>
+                        </p:tab>
+                        <p:tab id="economics" title="Economics and Marketing">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Economic Data -->
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">
+                                            <h:outputLabel value="Economics"/>
+                                        </h3>
+                                        <div class="g-mb-30">
+                                            <h:outputLabel class="g-mb-10" value="Listing For"/>
+                                            <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                <select class="js-select u-select--v3-select u-sibling w-100"
+                                                        required="required" title="Select a category"
+                                                        style="display: none;">
+                                                    <option value="selectListItem1">
+                                                        <span class="d-flex align-items-center w-100">Rent</span>
+                                                    </option>
+                                                </select>
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="g-mb-30">
+                                            <h:outputLabel class="g-mb-10" value="Status Flag"/>
+                                            <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                <select class="js-select u-select--v3-select u-sibling w-100"
+                                                        required="required" title="Select a category"
+                                                        style="display: none;">
+                                                    <option value="selectListItem1">
+                                                        <span class="d-flex align-items-center w-100">Available</span>
+                                                    </option>
+                                                </select>
+                                                <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="rent_price" value="Price For Rent" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="rent_price" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="00.00" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="sale_price" value="Sale Price" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="sale_price" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="00.00" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Economic Data -->
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Marketing Data -->
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">
+                                            <h:outputLabel value="Marketing Data"/>
+                                        </h3>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="image_1" value="Default Property Image" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:fileUpload id="image_1" mode="advanced" dragDropSupport="true" update=":add_property_form:growl"
+                                                              fileLimit="1" sizeLimit="100000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="images" value="Additional Property Images" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:fileUpload id="images" mode="advanced" dragDropSupport="true" update=":add_property_form:growl"
+                                                              fileLimit="20" sizeLimit="100000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group g-mb-30">
+                                            <h:outputLabel class="g-mb-10" for="video" value="Video Link (url)" />
+                                            <div class="g-pos-rel">
+                                                <span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+                                                    <i class="hs-admin-check g-absolute-centered g-font-size-default g-color-secondary"></i>
+                                                </span>
+                                                <p:inputText id="video" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-20 g-px-14 g-py-10"
+                                                             a:placeholder="url" counter="video_chars" maxlength="250"
+                                                             counterTemplate="{0} characters remaining."/>
+                                                <small class="g-font-weight-300 g-font-size-12 g-color-gray-dark-v6 g-pt-5">
+                                                    <h:outputText id="video_chars"/>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Marketing Data -->
+                                </div>
+                            </div>
+                        </p:tab>
+                        <p:tab id="confirm" title="Data Confirmation">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h:outputLabel value="Core"/>
+                                        <h:outputLabel value="Additional"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+                                        <h:outputLabel value="Location"/>
+                                        <h:outputLabel value="Economics"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </p:tab>
+                    </p:wizard>
+                </h:form>
+            </div>
+        </ui:fragment>
 
-                <ui:fragment id="unauthorized" rendered="#{!account.loggedIn}">
-                    <h1><h:outputLink value="authenticate.xhtml"><h:outputLabel value="Please Log In first"/></h:outputLink></h1>
-                </ui:fragment>
-            </ui:define>
+        <ui:fragment id="unauthorized" rendered="#{!account.loggedIn}">
+            <h1><h:outputLink value="authenticate.xhtml"><h:outputLabel value="Please Log In first"/></h:outputLink>
+            </h1>
+        </ui:fragment>
+    </ui:define>
 
-        </ui:composition>
+</ui:composition>
 
-    </body>
+</body>
 </html>

@@ -10,7 +10,7 @@
     </context-param>
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>afterdark</param-value>
+        <param-value>dot-luv</param-value>
     </context-param>
     <session-config>
         <session-timeout>

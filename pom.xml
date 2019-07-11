@@ -13,6 +13,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.javaee>8.0</version.javaee>
+        
         <version.hibernate-commons-annotations>5.1.0.Final</version.hibernate-commons-annotations>
         <version.hibernate-core>5.4.0.Final</version.hibernate-core>
         <version.hibernate-c3p0>5.4.0.Final</version.hibernate-c3p0>
@@ -20,6 +21,23 @@
         <version.hibernate-ehcache>5.4.0.Final</version.hibernate-ehcache>
         <version.hibernate-entitymanager>4.3.1.Final</version.hibernate-entitymanager>
         <version.mysql-connector-java>8.0.13</version.mysql-connector-java>
+        
+        <version.commons-io>2.6</version.commons-io>
+        <version.commons-lang3>3.8.1</version.commons-lang3>
+        <version.commons-fileupload>1.4</version.commons-fileupload>
+        <version.ant-compress>1.5</version.ant-compress>
+        
+        <version.slf4j-api>1.8.0-beta4</version.slf4j-api>
+        <version.slf4j-simple>1.8.0-beta4</version.slf4j-simple>
+        <version.slf4j-ext>1.8.0-beta4</version.slf4j-ext>
+        <version.log4j-slf4j-impl>2.11.2</version.log4j-slf4j-impl>
+        <version.log4j-api>2.11.2</version.log4j-api>
+        <version.log4j-core>2.11.2</version.log4j-core>
+        <version.log4j-web>2.11.2</version.log4j-web>
+        
+        <version.primefaces>7.0</version.primefaces>
+        <version.all-themes>1.0.10</version.all-themes>
+        <version.prettyfaces-jsf2>3.3.3</version.prettyfaces-jsf2>
     </properties>
     
     <repositories>
@@ -82,77 +100,77 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.6</version>
+            <version>${version.commons-io}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
+            <version>${version.commons-lang3</version>
         </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>1.4</version>
+            <version>${version.commons-fileupload}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant-compress</artifactId>
-            <version>1.5</version>
+            <version>${version.ant-compress}</version>
         </dependency>
         
         <!-- LOGGER DEPENDENCIES -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.8.0-beta4</version>
+            <version>${version.slf4j-api}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.8.0-beta4</version>
+            <version>${version.slf4j-simple}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-ext</artifactId>
-            <version>1.8.0-beta4</version>
+            <version>${version.slf4j-ext}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.11.2</version>
+            <version>${version.log4j-slf4j-impl}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.11.2</version>
+            <version>${version.log4j-api}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.11.2</version>
+            <version>${version.log4j-core}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
-            <version>2.11.2</version>
+            <version>${version.log4j-web}</version>
         </dependency>
         
         <!-- PRIMEFACES DEPENDENCIES -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>7.0</version>
+            <version>${version.primefaces}</version>
         </dependency>
         <dependency>
             <groupId>org.primefaces.themes</groupId>
             <artifactId>all-themes</artifactId>
-            <version>1.0.10</version>
+            <version>${version.all-themes}</version>
         </dependency>
         <dependency>
             <groupId>com.ocpsoft</groupId>
             <artifactId>prettyfaces-jsf2</artifactId>
-            <version>3.3.3</version>
+            <version>${version.prettyfaces-jsf2}</version>
         </dependency>
         
     </dependencies>
