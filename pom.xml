@@ -37,7 +37,9 @@
         
         <version.primefaces>7.0</version.primefaces>
         <version.all-themes>1.0.10</version.all-themes>
-        <version.prettyfaces-jsf2>3.3.3</version.prettyfaces-jsf2>
+         <version.prettyfaces-jsf2>3.3.3</version.prettyfaces-jsf2>
+<!--        <version.rewrite-config-prettyfaces>3.4.2.Final</version.rewrite-config-prettyfaces>-->
+<!--        <version.rewrite-servlet>3.4.2.Final</version.rewrite-servlet>-->
     </properties>
     
     <repositories>
@@ -172,6 +174,16 @@
             <artifactId>prettyfaces-jsf2</artifactId>
             <version>${version.prettyfaces-jsf2}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.ocpsoft.rewrite</groupId>-->
+<!--            <artifactId>rewrite-config-prettyfaces</artifactId>-->
+<!--            <version>${version.rewrite-config-prettyfaces}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.ocpsoft.rewrite</groupId>-->
+<!--            <artifactId>rewrite-servlet</artifactId>-->
+<!--            <version>${version.rewrite-servlet}</version>-->
+<!--        </dependency>-->
         
     </dependencies>
 
