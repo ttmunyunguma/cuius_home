@@ -29,11 +29,7 @@ import org.hibernate.query.Query;
  * @author terrence
  */
 public class UserDao {
-    
-    // ======================================
-    // =             Attributes             =
-    // ======================================
-    
+
     static SessionFactory factory = HibernateUtil.getSessionFactory();
     public static boolean isProceessSuccessful;
 
@@ -42,11 +38,7 @@ public class UserDao {
      */
     public UserDao() {
     }
-    
-    // ======================================
-    // =          Business methods          =
-    // ======================================
-    
+
     public static PropertyManager signInManager(String email, String password){
         
         try {

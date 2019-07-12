@@ -45,99 +45,29 @@ import org.primefaces.PrimeFaces;
 @Named(value = "account")
 @SessionScoped
 public class Account implements Serializable{
-    
-    // ======================================
-    // =          Injection Points          =
-    // ======================================
-    
-    private static final String COOKIE_NAME = "applicationCuiusHomeCookie";
-    private static final int COOKIE_AGE = 3600; // Expires after 60 seconds or even 2_592_000 for one month
 
     @Inject
     private BeanManager beanManager;
-    @Inject
-    private HttpServletRequest request;
-    
-    // ======================================
-    // =             Constants              =
-    // ======================================
-    
-    private FacesContext facesContext;
-    private HttpServletResponse response;
-    
-    // ======================================
-    // =             Attributes             =
-    // ======================================
-    // Logged user
     private PropertyManager propertyManager = new PropertyManager();
     private boolean loggedIn;
     private boolean admin;
-    private String password1;
-    private String password2;
-    private boolean rememberMe;
     
     /**
      * Creates a new instance of Account
      */
     public Account() {
     }
-    
-    // ======================================
-    // =         Lifecycle methods          =
-    // ======================================
-    
-    @PostConstruct
-    private void checkIfUserHasRememberMeCookie() {
-        String coockieValue = getCookieValue();
-        if (coockieValue == null)
-            return;
 
-//        TypedQuery<User> query = em.createNamedQuery(User.FIND_BY_UUID, User.class);
-//        query.setParameter("uuid", coockieValue);
-//        try {
-//            user = query.getSingleResult();
-//            // If the user is an administrator
-//            if (user.getRole().equals(UserRole.ADMIN))
-//                admin = true;
-//            // The user is now logged in
-//            loggedIn = true;
-//        } catch (NoResultException e) {
-//            // The user maybe has an old coockie, let's get rid of it
-//            removeCookie();
-//        }
-    }
-    
-    
-    // ======================================
-    // =          Business methods          =
-    // ======================================
-    
     public String signIn() throws IOException {
         
         propertyManager = UserDao.signInManager(propertyManager.getEmailAddress(), PasswordUtils.digestPassword(propertyManager.getPassword()));
         boolean status = UserDao.isProceessSuccessful;
-        
-/*        try {
-           //  If the user is an administrator
-            if (user.getRoleId() == 1){
-                admin = true;
-            
-              //If the user has clicked on remember me
-//            if (rememberMe) {
-//                String uuid = UUID.randomUUID().toString();
-//                user.setUuid(uuid);
-//                addCookie(uuid);
 
-            } else {
-                user.setUuid(null);
-                removeCookie();
-            }*/
-            if (status) {
+        if (status) {
 
             FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null, new FacesMessage("Welcome" + propertyManager.getFullName(), "Good to have you back"));
             loggedIn = true;
-//            PrimeFaces.current().ajax().addCallbackParam("loggedIn", loggedIn);
             return "index.xhtml?faces-redirect=true";
         }
           else {
@@ -158,41 +88,7 @@ public class Account implements Serializable{
         
         context.getExternalContext().redirect("../index.html");
     }
-    
-    // Cookie
-    private String getCookieValue() {
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (COOKIE_NAME.equals(cookie.getName())) {
-                    return cookie.getValue();
-                }
-            }
-        }
-        return null;
-    }
 
-    private void addCookie(String value) {
-        Cookie cookie = new Cookie(COOKIE_NAME, value);
-        cookie.setPath("/cuiusLogin");
-        cookie.setMaxAge(COOKIE_AGE);
-        response.addCookie(cookie);
-    }
-
-    private void removeCookie() {
-        Cookie cookie = new Cookie(COOKIE_NAME, null);
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
-    }
-
-    private void resetPasswords() {
-        password1 = null;
-        password2 = null;
-    }
-    
-    // ======================================
-    // =        Getters and Setters         =
-    // ======================================
 
     public PropertyManager getPropertyManager() {
         return propertyManager;
@@ -200,38 +96,6 @@ public class Account implements Serializable{
 
     public void setPropertyManager(PropertyManager propertyManager) {
         this.propertyManager = propertyManager;
-    }
-
-    public BeanManager getBeanManager() {
-        return beanManager;
-    }
-
-    public void setBeanManager(BeanManager beanManager) {
-        this.beanManager = beanManager;
-    }
-
-    public HttpServletRequest getRequest() {
-        return request;
-    }
-
-    public void setRequest(HttpServletRequest request) {
-        this.request = request;
-    }
-
-    public FacesContext getFacesContext() {
-        return facesContext;
-    }
-
-    public void setFacesContext(FacesContext facesContext) {
-        this.facesContext = facesContext;
-    }
-
-    public HttpServletResponse getResponse() {
-        return response;
-    }
-
-    public void setResponse(HttpServletResponse response) {
-        this.response = response;
     }
 
     public boolean isLoggedIn() {
@@ -248,30 +112,6 @@ public class Account implements Serializable{
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
-    }
-
-    public String getPassword1() {
-        return password1;
-    }
-
-    public void setPassword1(String password1) {
-        this.password1 = password1;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
-    }
-
-    public boolean isRememberMe() {
-        return rememberMe;
-    }
-
-    public void setRememberMe(boolean rememberMe) {
-        this.rememberMe = rememberMe;
     }
     
 }
