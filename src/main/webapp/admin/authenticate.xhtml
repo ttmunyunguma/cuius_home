@@ -8,7 +8,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="assets/css/login.css" />
+        <link rel="stylesheet" href="#{request.contextPath}/admin/assets/css/login.css" />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600' />
         <title>Log In to Platform</title>
     </h:head>
@@ -22,7 +22,7 @@
                     <p:growl id="growl" sticky="true" showDetail="true" />
                     <div class="sign-in-htm">
                         <div class="group">
-                            <p:outputLabel for="user" class="label" value="Username" />
+                            <p:outputLabel for="user" class="label" value="Email" />
                             <p:inputText id="user" class="input"  value="#{account.propertyManager.emailAddress}" a:placeholder="your@email.address" required="true" requiredMessage="Enter Email Address" validatorMessage="Enter Valid Email">
                                 <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
                             </p:inputText>
@@ -45,20 +45,20 @@
                     </div>
                     <div class="sign-up-htm">
                         <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" class="input" />
+                            <label for="suser" class="label">Username</label>
+                            <input id="suser" type="text" class="input" />
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="password" />
+                            <label for="spass" class="label">Password</label>
+                            <input id="spass" type="password" class="input" data-type="password" />
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Repeat Password</label>
-                            <input id="pass" type="password" class="input" data-type="password" />
+                            <label for="spass" class="label">Repeat Password</label>
+                            <input id="spass" type="password" class="input" data-type="password" />
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Email Address</label>
-                            <input id="pass" type="text" class="input" />
+                            <label for="spass" class="label">Email Address</label>
+                            <input id="spass" type="text" class="input" />
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign Up" />

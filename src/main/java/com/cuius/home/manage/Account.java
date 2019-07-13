@@ -58,23 +58,20 @@ public class Account implements Serializable{
     public Account() {
     }
 
-    public String signIn() throws IOException {
+    public void signIn() throws IOException {
         
         propertyManager = UserDao.signInManager(propertyManager.getEmailAddress(), PasswordUtils.digestPassword(propertyManager.getPassword()));
         boolean status = UserDao.isProceessSuccessful;
-
+        FacesContext context = FacesContext.getCurrentInstance();
         if (status) {
-
-            FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null, new FacesMessage("Welcome" + propertyManager.getFullName(), "Good to have you back"));
             loggedIn = true;
-            return "index.xhtml?faces-redirect=true";
+            context.getExternalContext().redirect("portal/");
         }
           else {
-            FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null, new FacesMessage("Wrong user/password", "Check your inputs or ask for a new password"));
 
-            return "authenticate.xhtml?faces-redirect=true";
+            context.getExternalContext().redirect("authenticate/");
         }
             
     }

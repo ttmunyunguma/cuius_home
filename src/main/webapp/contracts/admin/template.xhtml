@@ -13,7 +13,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="../favicon.ico" />
+        <link rel="shortcut icon" href="#{request.contextPath}/favicon.ico" />
         <!-- Google Fonts -->
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik" />
         <!-- CSS Global Compulsory -->
@@ -61,8 +61,8 @@
                             <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12">
 
                                 <!-- Logo -->
-                                <p:link outcome="index.xhtml" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
-                                    <p:outputLabel value="Cuius Portal" />
+                                <p:link outcome="index" class="navbar-brand d-flex align-self-center g-hidden-xs-down g-line-height-1 py-0 g-mt-5">
+                                    <h:outputLabel value="Cuius Portal" />
                                 </p:link>
                                 <!-- End Logo -->
 
@@ -395,7 +395,7 @@
                                 </li>
                                 <!-- End Rentals -->
 
-                                <!-- Properties -->
+                                <!-- Manage Properties -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu7">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -427,7 +427,9 @@
                                             <ul id="subMenu7Elements" class="u-side-nav--third-level-menu">
                                                 <!-- Add Property -->
                                                 <li class="u-side-nav--third-level-menu-item">
-                                                    <p:link class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" outcome="add_property.xhtml">All</p:link>
+                                                    <p:link class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" outcome="add_property">
+                                                        <h:outputLabel value="All" />
+                                                    </p:link>
                                                 </li>
                                                 <!-- Add Property -->
                                             </ul>
@@ -461,9 +463,9 @@
                                     </ul>
                                     <!-- End Forms: Submenu-1 -->
                                 </li>
-                                <!-- End Properties -->
+                                <!-- End Manage Properties -->
 
-                                <!-- Tables -->
+                                <!-- Inspect -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu8">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -504,9 +506,9 @@
                                     </ul>
                                     <!-- End Tables: Submenu-1 -->
                                 </li>
-                                <!-- End Tables -->
+                                <!-- End Inspect -->
 
-                                <!-- UI Components -->
+                                <!-- CRM -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu5">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -519,9 +521,9 @@
                                         <span class="u-side-nav--has-sub-menu__indicator"></span>
                                     </a>
                                 </li>
-                                <!-- End UI Components -->
+                                <!-- End CRM -->
 
-                                <!-- Timeline History -->
+                                <!-- Deliveries -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#">
                                         <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
@@ -534,9 +536,9 @@
                                         </span>
                                     </a>
                                 </li>
-                                <!-- End Timeline History -->
+                                <!-- End Deliveries -->
 
-                                <!-- Packages -->
+                                <!-- Tenants -->
                                 <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
                                     <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#">
                                         <span class="d-flex align-self-center g-font-size-18 g-mr-18">
@@ -545,7 +547,7 @@
                                         <span class="media-body align-self-center">Tenants</span>
                                     </a>
                                 </li>
-                                <!-- End Packages -->
+                                <!-- End Tenants -->
                             </ul>
                         </div>
                         <!-- End Sidebar Nav -->

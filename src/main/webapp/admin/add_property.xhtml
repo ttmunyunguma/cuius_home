@@ -394,7 +394,7 @@
         </ui:fragment>
 
         <ui:fragment id="unauthorized" rendered="#{!account.loggedIn}">
-            <h1><p:link outcome="authenticate.xhtml"><h:outputLabel value="Please Log In first"/></p:link>
+            <h1><p:link outcome="authenticate"><h:outputLabel value="Please Log In first"/></p:link>
             </h1>
         </ui:fragment>
     </ui:define>

@@ -54,6 +54,7 @@ public class UserDao {
             
             return result;
         } catch (HibernateException e) {
+            System.out.println(e.getMessage());
         }
         return null;
     }
