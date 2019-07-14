@@ -11,14 +11,14 @@
         <many-to-one name="propertyCategory" class="com.cuius.home.entity.PropertyCategory" fetch="select">
             <column name="category_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="propertyImage" class="com.cuius.home.entity.PropertyImage" fetch="select">
-            <column name="image_id" not-null="true" />
-        </many-to-one>
         <many-to-one name="propertyManager" class="com.cuius.home.entity.PropertyManager" fetch="select">
             <column name="agent_id" not-null="true" />
         </many-to-one>
         <property name="propertyName" type="string">
             <column name="property_name" length="500" not-null="true" />
+        </property>
+        <property name="availableFor" type="string">
+            <column name="avalable_for" length="20" not-null="true" />
         </property>
         <property name="detailedDescription" type="string">
             <column name="detailed_description" length="5000" not-null="true" />

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
@@ -7,24 +8,26 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <body>
+<body>
 
-        <ui:composition template="/template.xhtml">
-            <ui:define name="title">Cuius Property Manager Portal</ui:define>
+<ui:composition template="/template.xhtml">
+    <ui:define name="title">Cuius Property Manager Portal</ui:define>
 
-            <ui:define name="content" rendered="#{account.loggedIn}">
-                
-                <ui:fragment id="authorized" rendered="#{account.loggedIn}">
-                    <h1><h:outputLabel value="TODO add content" /></h1>
-                </ui:fragment>
-                
-                <ui:fragment id="unauthorized" rendered="#{!account.loggedIn}">
-                    <h1><p:link outcome="authenticate"><h:outputLabel value="Please Log In first"/></p:link></h1>
-                </ui:fragment>
-                
-            </ui:define>
+    <ui:define name="content" rendered="#{account.loggedIn}">
 
-        </ui:composition>
+        <ui:fragment id="authorized" rendered="#{account.loggedIn}">
+            <h1><h:outputLabel value="TODO add content"/></h1>
+        </ui:fragment>
 
-    </body>
+        <ui:fragment id="unauthorized" rendered="#{!account.loggedIn}">
+            <h:form>
+                <h1><p:link outcome="authenticate"><h:outputLabel value="Please Log In first"/></p:link></h1>
+            </h:form>
+        </ui:fragment>
+
+    </ui:define>
+
+</ui:composition>
+
+</body>
 </html>

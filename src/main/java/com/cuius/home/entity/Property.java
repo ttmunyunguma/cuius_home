@@ -30,7 +30,7 @@ public class Property  implements java.io.Serializable {
 
      private Integer propertyId;
      private PropertyCategory propertyCategory;
-     private PropertyImage propertyImage;
+     private String availableFor;
      private PropertyManager propertyManager;
      private String propertyName;
      private String detailedDescription;
@@ -55,9 +55,9 @@ public class Property  implements java.io.Serializable {
     }
 
 	
-    public Property(PropertyCategory propertyCategory, PropertyImage propertyImage, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String priceRent, String priceSale, String videoUrl) {
+    public Property(PropertyCategory propertyCategory, String availableFor, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String priceRent, String priceSale, String videoUrl) {
         this.propertyCategory = propertyCategory;
-        this.propertyImage = propertyImage;
+        this.availableFor = availableFor;
         this.propertyManager = propertyManager;
         this.propertyName = propertyName;
         this.detailedDescription = detailedDescription;
@@ -71,9 +71,9 @@ public class Property  implements java.io.Serializable {
         this.priceSale = priceSale;
         this.videoUrl = videoUrl;
     }
-    public Property(PropertyCategory propertyCategory, PropertyImage propertyImage, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, Date yearBuilt, Integer totalRooms, Integer totalBeds, Integer totalBaths, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String latitude, String longitude, String priceRent, String priceSale, String videoUrl, Set propertyHistories) {
+    public Property(PropertyCategory propertyCategory, String availableFor, PropertyManager propertyManager, String propertyName, String detailedDescription, String address, String town, String region, Date yearBuilt, Integer totalRooms, Integer totalBeds, Integer totalBaths, double totalLandAreaSqmts, double totalBuildingAreaSqmts, String status, String latitude, String longitude, String priceRent, String priceSale, String videoUrl, Set propertyHistories) {
        this.propertyCategory = propertyCategory;
-       this.propertyImage = propertyImage;
+       this.availableFor = availableFor;
        this.propertyManager = propertyManager;
        this.propertyName = propertyName;
        this.detailedDescription = detailedDescription;
@@ -117,17 +117,16 @@ public class Property  implements java.io.Serializable {
         this.propertyCategory = propertyCategory;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="image_id", nullable=false)
-    public PropertyImage getPropertyImage() {
-        return this.propertyImage;
-    }
-    
-    public void setPropertyImage(PropertyImage propertyImage) {
-        this.propertyImage = propertyImage;
+    @Column(name="available_for", nullable=false, length=20)
+    public String getAvailableFor() {
+        return availableFor;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+    public void setAvailableFor(String availableFor) {
+        this.availableFor = availableFor;
+    }
+
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="agent_id", nullable=false)
     public PropertyManager getPropertyManager() {
         return this.propertyManager;

@@ -8,6 +8,9 @@
             <column name="image_id" />
             <generator class="identity" />
         </id>
+        <one-to-one name="property" class="com.cuius.home.entity.Property" fetch="select">
+            <column name="property_id" not-null="true" />
+        </one-to-one>
         <property name="imageUrl" type="string">
             <column name="image_url" length="500" not-null="true" />
         </property>

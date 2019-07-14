@@ -21,9 +21,12 @@ package com.cuius.home.manage;
 import com.cuius.home.entity.Property;
 import com.cuius.home.entity.PropertyHistory;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -36,9 +39,23 @@ public class PropertyMB implements Serializable {
     private Property property = new Property();
     private PropertyHistory propertyHistory = new PropertyHistory();
 
+    private String availableFor;
+    private Map<String,String> availableForOptions = new HashMap<>();
+    private String statusFlag;
+    private Map<String,String> statusFlagOptions = new HashMap<>();
+
     public PropertyMB() {
     }
 
+    @PostConstruct
+    public void init() {
+        availableForOptions = new HashMap<>();
+        availableForOptions.put("Rent", "Rent");
+        availableForOptions.put("Sale", "Sale");
+
+        statusFlagOptions = new HashMap<>();
+        statusFlagOptions.put("Available", "Available");
+    }
 
 
     public Property getProperty() {
@@ -55,5 +72,17 @@ public class PropertyMB implements Serializable {
 
     public void setPropertyHistory(PropertyHistory propertyHistory) {
         this.propertyHistory = propertyHistory;
+    }
+
+    public String getAvailableFor() {
+        return availableFor;
+    }
+
+    public void setAvailableFor(String availableFor) {
+        this.availableFor = availableFor;
+    }
+
+    public Map<String, String> getAvailableForOptions() {
+        return availableForOptions;
     }
 }
