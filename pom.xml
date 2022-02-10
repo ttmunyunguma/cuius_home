@@ -15,7 +15,7 @@
         <version.javaee>8.0</version.javaee>
         
         <version.hibernate-commons-annotations>5.1.0.Final</version.hibernate-commons-annotations>
-        <version.hibernate-core>5.4.0.Final</version.hibernate-core>
+        <version.hibernate-core>5.4.24.Final</version.hibernate-core>
         <version.hibernate-c3p0>5.4.0.Final</version.hibernate-c3p0>
         <version.hibernate-jpa-2.1-api>1.0.2.Final</version.hibernate-jpa-2.1-api>
         <version.hibernate-ehcache>5.4.0.Final</version.hibernate-ehcache>
